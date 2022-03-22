@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Cursos from './componentes/Cursos.js'
+import Oportunidades from './componentes/Oportunidades.js';
+import Projetos from './componentes/Projetos';
+import Tecnologias from './componentes/Tecnologogias.js';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+  
+            
+            <Route element ={<App/>} path="/" exact/>
+            <Route element ={<Cursos/>} path="/Cursos"/>
+            <Route element ={<Oportunidades/>} path="/Oportunidades"/>
+            <Route element ={<Projetos/>} path="/Projetos"/>
+            <Route element ={<Tecnologias/>} path="/Tecnologias"/>
+    
+   
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
